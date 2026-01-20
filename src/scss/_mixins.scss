@@ -1,0 +1,59 @@
+@use 'variables';
+
+// ------------------------------
+// Transición global
+// ------------------------------
+@mixin transition-all($time: variables.$transition-speed) {
+  transition: all $time ease-in-out;
+}
+
+// ------------------------------
+// Efecto hover para cards
+// ------------------------------
+@mixin card-hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+// ------------------------------
+// Bordes redondeados
+// ------------------------------
+@mixin rounded($radius: 12px) {
+  border-radius: $radius;
+}
+
+// ------------------------------
+// Sombra reusable
+// ------------------------------
+@mixin shadow($x:0, $y:4px, $blur:10px, $color: rgba(0,0,0,0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+// ------------------------------
+// Modo oscuro
+// ------------------------------
+@mixin dark-mode($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+// ------------------------------
+// Centrado flex
+// ------------------------------
+@mixin flex-center($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+// ------------------------------
+// Texto responsive
+// ------------------------------
+@mixin responsive-text($size-small, $size-large) {
+  font-size: $size-small;
+  @media (min-width: 768px) {
+    font-size: $size-large;
+  }
+}

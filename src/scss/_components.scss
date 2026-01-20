@@ -1,0 +1,202 @@
+@use 'sass:color';
+@use 'variables';
+@use 'mixins';
+
+// ------------------------------
+// Body
+// ------------------------------
+body {
+  font-family: variables.$font-primary;
+  background-color: variables.$bg-light;
+  color: variables.$text-dark;
+  @include mixins.transition-all();
+
+  &.dark-mode {
+    background-color: variables.$bg-dark;
+    color: variables.$text-light;
+
+    .navbar {
+      background-color: color.scale(variables.$primary-color, $lightness: -20%);
+
+      .nav-link {
+        color: variables.$text-light;
+        &:hover { color: variables.$accent-color; }
+      }
+
+      .nav-link.active {
+        color: #a8e6a3; // verde claro resaltante en modo oscuro
+        font-weight: 700;
+        border-bottom: 3px solid #a8e6a3;
+        padding-bottom: 4px;
+      }
+    }
+
+    .card,
+    .card-body,
+    .modal-content,
+    .contact-section,
+    footer {
+      color: inherit !important;
+    }
+
+    .card {
+      @include mixins.dark-mode(variables.$card-bg-dark, variables.$text-light);
+      &:hover {
+        background-color: variables.$card-hover-dark;
+      }
+    }
+
+    a {
+      color: variables.$accent-color !important;
+    }
+
+    footer {
+      background-color: #577a59;
+      color: variables.$text-light;
+    }
+  }
+}
+
+// ------------------------------
+// Navbar
+// ------------------------------
+.navbar {
+  background-color: variables.$primary-color;
+
+  .nav-link {
+    color: variables.$text-light;
+    font-weight: 500;
+    transition: color 0.3s;
+
+    &:hover { color: variables.$accent-color; }
+
+    &.active {
+      font-weight: 700;
+      border-bottom: 3px solid variables.$accent-color;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+// ------------------------------
+// Cards
+// ------------------------------
+.card {
+  @include mixins.rounded();
+  @include mixins.transition-all();
+  background-color: variables.$card-bg;
+  color: variables.$text-dark;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  &:hover {
+    @include mixins.card-hover();
+    background-color: variables.$card-hover-color;
+  }
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 200px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include mixins.rounded(12px);
+  }
+}
+
+// ------------------------------
+// Contact Section
+// ------------------------------
+.contact-section {
+  @include mixins.flex-center(row);
+  width: 100%;
+  padding: 4rem 1rem;
+  gap: 2rem;
+
+  .contact-title {
+    @include mixins.responsive-text(1.8rem, 2.2rem);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-text {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+
+    a {
+      color: variables.$accent-color;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s;
+      &:hover { color: variables.$primary-color; text-decoration: underline; }
+    }
+  }
+}
+
+// ------------------------------
+// Footer
+// ------------------------------
+footer {
+  background-color: variables.$secondary-color;
+  color: variables.$text-light;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+// ------------------------------
+// Dark Mode Toggle
+// ------------------------------
+body.dark-mode .modal-content {
+  background-color: variables.$card-bg-dark !important;
+  color: variables.$text-light !important;
+
+  .btn-close {
+    color: variables.$text-light !important;
+  }
+}
+
+body.dark-mode .card {
+  background-color: variables.$card-bg-dark;
+  color: variables.$text-light;
+
+  &:hover {
+    background-color: variables.$card-hover-dark;
+  }
+}
+
+.dark-toggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: variables.$secondary-color;
+  position: relative;
+  padding: 4px;
+  transition: background 0.3s;
+
+  .icon {
+    position: absolute;
+    font-size: 16px;
+    transition: opacity 0.3s;
+  }
+  .sun { left: 8px; opacity: 1; }
+  .moon { right: 8px; opacity: 0; }
+}
+
+#theme-toggle:checked + .dark-toggle .sun { opacity: 0; }
+#theme-toggle:checked + .dark-toggle .moon { opacity: 1; }
+
+// ------------------------------
+// Contacto scroll
+// ------------------------------
+#contacto {
+  min-height: 50vh;
+  scroll-margin-top: 100px;
+}
