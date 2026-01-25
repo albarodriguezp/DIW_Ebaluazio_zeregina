@@ -137,6 +137,27 @@ body {
     }
   }
 }
+// ------------------------------
+// Botones personalizados (Ver más)
+// ------------------------------
+.btn-primary {
+  background-color: variables.$accent-color;
+  border-color: variables.$accent-color;
+  color: #000000;
+  font-weight: 500;
+  @include mixins.transition-all();
+
+  &:hover,
+  &:focus {
+    background-color: color.scale(variables.$accent-color, $lightness: -10%);
+    border-color: color.scale(variables.$accent-color, $lightness: -10%);
+  }
+
+  &:active {
+    background-color: color.scale(variables.$accent-color, $lightness: -15%);
+    border-color: color.scale(variables.$accent-color, $lightness: -15%);
+  }
+}
 
 // ------------------------------
 // Footer
@@ -151,6 +172,32 @@ footer {
 // ------------------------------
 // Dark Mode Toggle
 // ------------------------------
+body.dark-mode {
+
+  .modal-header .btn-close {
+    filter: invert(1);
+    opacity: 1;
+  }
+
+}
+
+body.dark-mode {
+
+  .btn-primary {
+    background-color: color.scale(variables.$accent-color, $lightness: 10%);
+    border-color: color.scale(variables.$accent-color, $lightness: 10%);
+    color: variables.$text-dark;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$accent-color;
+      border-color: variables.$accent-color;
+    }
+  }
+
+}
+
+
 body.dark-mode .modal-content {
   background-color: variables.$card-bg-dark !important;
   color: variables.$text-light !important;

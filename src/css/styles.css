@@ -127,11 +127,42 @@ body.dark-mode footer {
   text-decoration: underline;
 }
 
+.btn-primary {
+  background-color: #cddc39;
+  border-color: #cddc39;
+  color: #000000;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: rgb(195.8021459227, 211.8515021459, 37.4484978541);
+  border-color: rgb(195.8021459227, 211.8515021459, 37.4484978541);
+}
+.btn-primary:active {
+  background-color: rgb(184.924248927, 200.0819742489, 35.3680257511);
+  border-color: rgb(184.924248927, 200.0819742489, 35.3680257511);
+}
+
 footer {
   background-color: #0b3a42;
   color: #ffffff;
   padding: 1rem 0;
   text-align: center;
+}
+
+body.dark-mode .modal-header .btn-close {
+  filter: invert(1);
+  opacity: 1;
+}
+
+body.dark-mode .btn-primary {
+  background-color: rgb(210, 223.5, 76.8);
+  border-color: rgb(210, 223.5, 76.8);
+  color: #000000;
+}
+body.dark-mode .btn-primary:hover, body.dark-mode .btn-primary:focus {
+  background-color: #cddc39;
+  border-color: #cddc39;
 }
 
 body.dark-mode .modal-content {
