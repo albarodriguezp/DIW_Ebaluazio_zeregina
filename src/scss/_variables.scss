@@ -1,19 +1,22 @@
 // ------------------------------
-// Variables globales
+// Aldagai globalak
 // ------------------------------
+// Fitxategi honetan webguneko kolore, tipografia
+// eta balio nagusiak definitzen dira, berrerabilpena
+// eta mantentzea errazteko
 
-// Colores
-$primary-color: #4caf50;        // Verde principal
-$secondary-color: #0b3a42;      // Fondo navbar/footer
-$accent-color: #cddc39;         // Verde lima/acento
+// Koloreak
+$primary-color: #4caf50;        
+$secondary-color: #0b3a42;      
+$accent-color: #cddc39;         
 
-// Fondos
-$bg-light: #ffffff;             // Fondo claro
-$bg-dark: #2e3a2b;              // Fondo oscuro
+// Fondoa
+$bg-light: #ffffff;             
+$bg-dark: #2e3a2b;              
 
-// Texto
-$text-dark: #000000;            // Texto claro
-$text-light: #ffffff;           // Texto oscuro
+// Textua
+$text-dark: #000000;            
+$text-light: #ffffff;           
 
 // Cards
 $card-bg: #ffffff;
@@ -21,9 +24,13 @@ $card-hover-color: #e6f1d9;
 $card-bg-dark: #3a4a34;
 $card-hover-dark: #5a6a44;
 
-// Transiciones
+// ------------------------------
+// Trantsizioak
+// ------------------------------
 $transition-speed: 0.3s;
 
-// Fuentes
+// ------------------------------
+// Tipografiak
+// ------------------------------
 $font-primary: 'Arial', sans-serif;
 $font-secondary: 'Verdana', sans-serif;

@@ -1,45 +1,61 @@
+// Aldagaien fitxategia inportatzen da
+// Bertan trantsizio-denborak, koloreak, etab. definitzen dira
 @use 'variables';
 
 // ------------------------------
-// Transición global
+// Trantsizio globala
 // ------------------------------
+// Elementu bati trantsizio leuna aplikatzeko mixina
+// Denbora parametroa aukerakoa da eta, bestela,
+// variables fitxategitik hartzen da
 @mixin transition-all($time: variables.$transition-speed) {
   transition: all $time ease-in-out;
 }
 
+
 // ------------------------------
-// Efecto hover para cards
+// Card-entzat hover efektua
 // ------------------------------
+// Sagua gainetik pasatzean txartela apur bat igotzen da
+// eta itzal handiagoa aplikatzen zaio
 @mixin card-hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 // ------------------------------
-// Bordes redondeados
+// Ertz biribilduak
 // ------------------------------
+// Elementuen ertzak biribiltzeko mixina
+// Erradioa parametro bidez alda daiteke
 @mixin rounded($radius: 12px) {
   border-radius: $radius;
 }
 
 // ------------------------------
-// Sombra reusable
+// Itzal berrerabilgarria
 // ------------------------------
+// Box-shadow pertsonalizagarria sortzeko mixina
+// Balio lehenetsiak definituta daude erraztasunerako
 @mixin shadow($x:0, $y:4px, $blur:10px, $color: rgba(0,0,0,0.1)) {
   box-shadow: $x $y $blur $color;
 }
 
 // ------------------------------
-// Modo oscuro
+// Modo iluna
 // ------------------------------
+// Atzeko planoaren eta testuaren kolorea aldatzen duen mixina
+// Modo iluna modu sinplean aplikatzeko erabiltzen da
 @mixin dark-mode($bg-color, $text-color) {
   background-color: $bg-color;
   color: $text-color;
 }
 
 // ------------------------------
-// Centrado flex
+// Flex bidezko zentratzea
 // ------------------------------
+// Edukia horizontalki eta bertikalki zentratzeko mixina
+// Flex-direction parametro bidez definitzen da
 @mixin flex-center($direction: column) {
   display: flex;
   flex-direction: $direction;
@@ -49,8 +65,10 @@
 }
 
 // ------------------------------
-// Texto responsive
+// Testu responsive-a
 // ------------------------------
+// Pantailaren tamainaren arabera testuaren tamaina aldatzen du
+// Mugikorretarako tamaina txikiagoa eta pantaila handietarako handiagoa
 @mixin responsive-text($size-small, $size-large) {
   font-size: $size-small;
   @media (min-width: 768px) {
