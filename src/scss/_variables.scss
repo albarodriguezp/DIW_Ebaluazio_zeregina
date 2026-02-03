@@ -5,32 +5,56 @@
 // eta balio nagusiak definitzen dira, berrerabilpena
 // eta mantentzea errazteko
 
+// ------------------------------
 // Koloreak
-$primary-color: #4caf50;        
-$secondary-color: #0b3a42;      
-$accent-color: #cddc39;         
+// ------------------------------
+$primary-color: #4caf50;        // Kolore nagusia
+$secondary-color: #0b3a42;      // Bigarren kolorea / navbar eta footer
+$accent-color: #cddc39;         // Azentu kolorea / botoiak, hover-ak
 
-// Fondoa
-$bg-light: #ffffff;             
-$bg-dark: #2e3a2b;              
+// ------------------------------
+// Atzeko planoak
+// ------------------------------
+$bg-light: #ffffff;             // Modo argiko atzeko planoa
+$bg-dark: #2e3a2b;              // Modo iluneko atzeko planoa
 
-// Textua
-$text-dark: #000000;            
-$text-light: #ffffff;           
+// ------------------------------
+// Testuaren koloreak
+// ------------------------------
+$text-dark: #000000;            // Testu iluna (modo argian)
+$text-light: #ffffff;           // Testu argia (modo ilunean)
 
-// Cards
-$card-bg: #ffffff;
-$card-hover-color: #e6f1d9;
-$card-bg-dark: #3a4a34;
-$card-hover-dark: #5a6a44;
+// ------------------------------
+// Card edo txartelak
+// ------------------------------
+$card-bg: #ffffff;              // Card-en atzeko planoa modo argian
+$card-hover-color: #e6f1d9;     // Card-hover kolorea modo argian
+$card-bg-dark: #3a4a34;         // Card-en atzeko planoa modo ilunean
+$card-hover-dark: #5a6a44;      // Card-hover kolorea modo ilunean
+
+// ------------------------------
+// Botoiak
+// ------------------------------
+$btn-hover-darkness: 10%;       // Botoien hover/focus-eko iluntzea
+
+// ------------------------------
+// Bordes eta radius
+// ------------------------------
+$border-radius: 12px;           // Erabilera globalean (cards, botoiak, irudiak)
+
+// ------------------------------
+// Modals
+// ------------------------------
+$modal-bg: #ffffff;             // Modalen atzeko planoa modo argian
+$modal-bg-dark: #3a4a34;        // Modalen atzeko planoa modo ilunean
 
 // ------------------------------
 // Trantsizioak
 // ------------------------------
-$transition-speed: 0.3s;
+$transition-speed: 0.3s;        // Animazio eta trantsizioen abiadura
 
 // ------------------------------
 // Tipografiak
 // ------------------------------
-$font-primary: 'Arial', sans-serif;
-$font-secondary: 'Verdana', sans-serif;
+$font-primary: 'Arial', sans-serif;    // Letra-tipo nagusia
+$font-secondary: 'Verdana', sans-serif; // Bigarren letra-tipoa
